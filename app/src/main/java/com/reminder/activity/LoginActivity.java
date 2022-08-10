@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
+
+import com.reminder.MainActivity;
 import com.reminder.databinding.ActivityLoginBinding;
 
 
@@ -26,6 +28,14 @@ ActivityLoginBinding binding;
             public void onClick(View v) {
 
             startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+            }
+        });
+
+        binding.loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
         });
 

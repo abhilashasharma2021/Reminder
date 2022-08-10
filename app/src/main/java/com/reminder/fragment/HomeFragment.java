@@ -23,12 +23,27 @@ FragmentHomeBinding binding;
         binding = FragmentHomeBinding.inflate(getLayoutInflater(), container, false);
         view = binding.getRoot();
         context = getActivity();
+        updateProgreesbar();
+        binding.txName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (prog<=90){
+                    prog+=10;
+                    updateProgreesbar();
+                }
 
-        if (prog<=90){
-            prog+=10;
-            updateProgreesbar();
-        }
+            }
+        });
+        binding.txDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (prog>=10){
+                    prog-=10;
+                    updateProgreesbar();
+                }
 
+            }
+        });
         return view;
     }
 
