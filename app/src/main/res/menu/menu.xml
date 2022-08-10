@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/filter"
+        android:title="@string/filter"
+        android:icon="@drawable/filter"
+        app:cnb_textColor="#fff"
+        app:cnb_iconColor="#fff"
+        app:cnb_backgroundColor="#4F597E"
+        />
+    <item
+        android:id="@+id/reminder"
+        android:title="@string/reminder"
+        android:icon="@drawable/task"
+        app:cnb_textColor="#fff"
+        app:cnb_iconColor="#fff"
+        app:cnb_backgroundColor="#4F597E"
+        />
+    <item
+        android:id="@+id/setting"
+        android:title="@string/setting"
+        android:icon="@drawable/settings"
+        app:cnb_textColor="#fff"
+        app:cnb_iconColor="#fff"
+        app:cnb_backgroundColor="#4F597E"
+        />
+</menu>

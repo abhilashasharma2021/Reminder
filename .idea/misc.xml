@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/drawable/circle.xml" value="0.1735" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/drawable/round.xml" value="0.1735" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_main.xml" value="0.1890625" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_splash.xml" value="0.203125" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_welcome.xml" value="0.203125" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/easy_track_layout.xml" value="0.2" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/easy_widget_layout.xml" value="0.1890625" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/fragment_filterk.xml" value="0.1890625" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/fragment_setting.xml" value="0.203125" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/self_check_layout.xml" value="0.1890625" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/send_reminder_layout.xml" value="0.1890625" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/menu/menu.xml" value="0.203125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
