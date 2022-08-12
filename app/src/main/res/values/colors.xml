@@ -3,7 +3,7 @@
     <color name="purple_200">#4F597E</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#4F597E</color>
-    <color name="teal_200">#FF6200EE</color>
+    <color name="teal_200">#4F597E</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
@@ -39,8 +39,43 @@
 
     </array>
 
+
+    <array name="spConvention">
+        <item> AM </item>
+        <item> PM </item>
+
+    </array>
+    <array name="spHours">
+        <item> 0 </item>
+        <item> 01 </item>
+        <item> 02 </item>
+        <item> 03 </item>
+        <item> 04 </item>
+        <item> 05 </item>
+        <item> 06 </item>
+        <item> 07 </item>
+        <item> 08 </item>
+        <item> 09 </item>
+        <item> 10 </item>
+        <item> 11 </item>
+        <item> 12 </item>
+
+    </array>
+
+
+    <array name="spMin">
+        <item> 00 </item>
+        <item> 15 </item>
+        <item> 30 </item>
+        <item> 45 </item>
+
+    </array>
+
+
     <array name="spinnercountry">
         <item>Country</item>
+        <item>India</item>
+        <item>Australia</item>
 
 
     </array>

@@ -14,33 +14,42 @@
         android:theme="@style/Theme.Reminder"
         tools:targetApi="31">
         <activity
-            android:name=".activity.InviteTaskActivity"
-            android:exported="false" >
-
-        </activity>
-        <activity
-            android:name=".activity.ResetPasswordActivity"
-            android:exported="false" >
-
-
-        </activity>
-        <activity
-            android:name=".activity.ForgotPasswordActivity"
+            android:name=".activity.AddingTaskActivity"
             android:exported="true" >
 
-        </activity>
-        <activity
-            android:name=".activity.AssigningTaskActivity"
-            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".activity.InviteTaskActivity"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".activity.ResetPasswordActivity"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".activity.ForgotPasswordActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".activity.AssigningTaskActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".activity.SignUpActivity"
-            android:exported="false" />
+            android:exported="false" >
+
+
+        </activity>
         <activity
             android:name=".activity.LoginActivity"
             android:exported="false" />
@@ -50,9 +59,7 @@
         <activity
             android:name=".activity.SplashActivity"
             android:exported="false"
-            android:screenOrientation="fullSensor">
-
-        </activity>
+            android:screenOrientation="fullSensor"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="false" />

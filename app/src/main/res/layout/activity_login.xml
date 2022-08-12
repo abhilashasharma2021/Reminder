@@ -135,6 +135,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
                 android:text="@string/forgot_password"
+                android:id="@+id/txForgot"
                 android:textColor="@color/grey_text"
                 android:textSize="13sp"
                 android:textStyle="bold" />

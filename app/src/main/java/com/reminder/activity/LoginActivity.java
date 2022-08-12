@@ -30,7 +30,13 @@ ActivityLoginBinding binding;
             startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
             }
         });
+        binding.txForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                startActivity(new Intent(LoginActivity.this,ForgotPasswordActivity.class));
+            }
+        });
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

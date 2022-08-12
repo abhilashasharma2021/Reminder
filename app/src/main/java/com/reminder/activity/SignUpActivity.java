@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -46,13 +47,15 @@ ActivitySignUpBinding binding;
                 ((TextView) arg0.getChildAt(0)).setTextSize(12);
 
                 selected = binding.spGender.getSelectedItem().toString();
+
+                Log.e("ssssss", "onItemSelected: "+selected );
                 System.out.println(selected);
                 setid();
 
             }
 
             private void setid() {
-                binding.spGender.setSelection(sp_position);
+
 
 
             }
@@ -63,6 +66,9 @@ ActivitySignUpBinding binding;
 
             }
         });
+
+
+
 
 
 
@@ -83,13 +89,15 @@ ActivitySignUpBinding binding;
                 ((TextView) arg0.getChildAt(0)).setTextSize(12);
 
                 selectedCountry = binding.spCountry.getSelectedItem().toString();
+
+                Log.e("hxcjkhcj", "onItemSelected: "+selectedCountry );
                 System.out.println(selectedCountry);
                 setid();
 
             }
 
             private void setid() {
-                binding.spGender.setSelection(sp_position_country);
+
 
 
             }
