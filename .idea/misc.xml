@@ -4,9 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/drawable/circle.xml" value="0.1735" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/drawable/circle_blue.xml" value="0.144" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/drawable/circle_red.xml" value="0.144" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/drawable/custom_round_checkbox.xml" value="0.144" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/drawable/grey_round.xml" value="0.144" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/drawable/round.xml" value="0.1735" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_assigning_task.xml" value="0.25" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_forgot_password.xml" value="0.203125" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_invite_task.xml" value="0.25" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_main.xml" value="0.1890625" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_reset_password.xml" value="0.203125" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_splash.xml" value="0.203125" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_welcome.xml" value="0.203125" />

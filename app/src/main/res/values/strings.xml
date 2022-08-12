@@ -34,4 +34,25 @@
     <string name="your_progress_so_far">Your progress so far</string>
     <string name="you_have_nothing_aligned_for_tomorrow">You have nothing aligned for tomorrow</string>
     <string name="click_here_to_add_something">Click here to add something</string>
+    <string name="tap_and_hold_the_card_for_more_options">Tap and hold the card for more options</string>
+    <string name="assigned_to">Assigned to</string>
+    <string name="we_ll_send_you_a_reset_link_to_your_mail">We\'ll send you a reset link to your mail</string>
+    <string name="submit">Submit</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="enter_a_new_password_for_this_account">Enter a new password for this account</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="reset">Reset</string>
+    <string name="email">Email*</string>
+    <string name="name">Name*</string>
+    <string name="adding_someone_is_one_time_process">*Adding someone is one time process.</string>
+    <string name="once_you_have_added_someone_then_you_just_need_to_n_select_them_from_the_list_from_the_next_time">Once you have added someone then you just need to \n select them from the list from the next time</string>
+    <string name="invite">Invite</string>
+    <string name="edit">Edit</string>
+    <string name="assign">Assign</string>
+    <string name="seems_like_you_to_add_peopleto_your_friends_list">Seems like you to add peopleto your friends list</string>
+    <string name="whom_would_you_like_to_assign_this_task_to">Whom would you like to assign this task to?</string>
+    <string name="search">Search</string>
+    <string name="not_registered_yet">Not Registered yet</string>
+    <string name="invite_again">Invite again</string>
 </resources>

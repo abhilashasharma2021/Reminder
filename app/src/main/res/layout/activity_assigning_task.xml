@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AssigningTaskActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/purple_700">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="25dp"
+                    android:background="?actionBarItemBackground"
+                    android:src="@drawable/back"/>
+
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="Assign Task to "
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="-50dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:id="@+id/rlView"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:layout_width="5dp"
+                            android:layout_marginStart="15dp"
+                            android:background="@color/red"
+                            android:layout_height="30dp"/>
+
+                        <View
+                            android:layout_width="5dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_centerVertical="true"
+                            android:background="@color/yellow"
+                            android:visibility="gone"
+                            android:layout_height="30dp"/>
+                        <View
+                            android:layout_width="5dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_centerVertical="true"
+                            android:background="@color/green"
+                            android:visibility="gone"
+                            android:layout_height="30dp"/>
+
+                    </RelativeLayout>
+
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_toEndOf="@+id/rlView"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="20dp">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txTittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pay the Electricity Bill"
+                            android:textColor="@color/grey_text"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/ivPending"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/txTittle"
+                            android:src="@drawable/pending"
+                            app:tint="@color/grey_text" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txTittle"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toEndOf="@+id/ivPending"
+                            android:text="3.00 pm"
+                            android:textColor="@color/grey_text"
+                            android:textSize="12sp" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txWeek"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txTittle"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/txDate"
+                            android:text=". Monthly"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/grey_text"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/ivEdit"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_toStartOf="@+id/txEdit"
+                            android:src="@drawable/edit" />
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txEdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="25dp"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/edit"
+                            android:textColor="@color/purple_500"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/rlTap"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txHold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/seems_like_you_to_add_peopleto_your_friends_list"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txName"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/grey_text"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:hint=""
+                android:layout_marginTop="10dp"
+                android:inputType="textPersonName"
+                android:maxLength="60"
+                android:paddingStart="15dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_text"
+                android:textSize="14sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txEmail"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/grey_text"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:inputType="textEmailAddress"
+                android:maxLength="60"
+                android:paddingStart="15dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_text"
+                android:textSize="14sp" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:text="@string/adding_someone_is_one_time_process"
+                android:textColor="@color/grey_text"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:text="@string/once_you_have_added_someone_then_you_just_need_to_n_select_them_from_the_list_from_the_next_time"
+                android:textColor="@color/grey_text"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btInvite"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/invite"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:cornerRadius="50dp"
+        app:iconGravity="textStart"
+        app:iconSize="25dp" />
+
+</RelativeLayout>
