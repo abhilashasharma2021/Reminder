@@ -17,6 +17,16 @@ ActivityEditPersonalInfoBinding binding;
         binding= ActivityEditPersonalInfoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        binding.ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
+
         binding.txChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

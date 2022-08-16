@@ -41,7 +41,7 @@ ActivityForgotPasswordBinding binding;
                     }
                 });
 
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
                 dialog.show();
 
             }
