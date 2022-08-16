@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".activity.AddingTaskActivity">
 
     <RelativeLayout
@@ -91,6 +92,14 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
+
+            <CalendarView
+                android:id="@+id/calendar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:showWeekNumber="false"
+                android:shownWeekCount="5"
+                android:scrollbars="none"/>
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"

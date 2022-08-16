@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Reminder</string>
+    <string name="app_name">Manage Buddy</string>
     <string name="easy_to_treack">Easy to track</string>
     <string name="send_reminders_to_yours_friends">Send reminders to yours friends</string>
     <string name="a_simple_layout_for_improved_productivity">A simple layout for improved \n productivity</string>
