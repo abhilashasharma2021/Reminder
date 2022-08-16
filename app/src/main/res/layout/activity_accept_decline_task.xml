@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AcceptDeclineTaskActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/rl"
+        android:background="@color/purple_700">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:background="?actionBarItemBackground"
+            android:src="@drawable/back" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:text="@string/assigned_task"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    app:cardBackgroundColor="@color/greyCard"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/rlView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:layout_width="5dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="15dp"
+                                android:background="@color/red" />
+
+                            <View
+                                android:layout_width="5dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="15dp"
+                                android:background="@color/yellow"
+                                android:visibility="gone" />
+
+                            <View
+                                android:layout_width="5dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="15dp"
+                                android:background="@color/green"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rlPlan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="30dp"
+                            android:layout_toEndOf="@+id/rlView"
+                            android:gravity="center_vertical">
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/txTittle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="25dp"
+                                android:text="Take Fruit from the market"
+                                android:textColor="@color/grey_text"
+                                android:textSize="14sp"
+
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/ivPending"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_below="@+id/txTittle"
+                                android:layout_marginStart="15dp"
+                                android:src="@drawable/pending"
+                                app:tint="@color/grey_text" />
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/txDateAssign"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txTittle"
+                                android:layout_marginStart="5dp"
+                                android:layout_toEndOf="@+id/ivPending"
+                                android:text="3.00 pm"
+                                android:textColor="@color/grey_text"
+                                android:textSize="13sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/txWeek"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txTittle"
+                                android:layout_marginStart="5dp"
+                                android:layout_toEndOf="@+id/txDateAssign"
+                                android:text=". Monthly"
+                                android:textColor="@color/grey_text"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/ivAssign"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_below="@+id/ivPending"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/info" />
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/txAlready"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txDateAssign"
+                                android:layout_marginStart="5dp"
+                                android:layout_toEndOf="@+id/ivPending"
+                                android:text="you have call the electrician task already planned at this time"
+                                android:textColor="@color/grey_text"
+                                android:textSize="13sp" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivAssign"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btEdit"
+                                    android:layout_width="120dp"
+                                    android:layout_height="60dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/white"
+                                    android:text="@string/decline"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/red"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="22dp"
+                                    app:strokeColor="@color/red"
+                                    app:strokeWidth="2dp" />
+
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btSubmit"
+                                    android:layout_width="120dp"
+                                    android:layout_height="60dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/white"
+                                    android:text="@string/accept"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/green"
+                                    android:textSize="14sp"
+                                    app:cornerRadius="50dp"
+                                    app:iconGravity="textStart"
+                                    app:iconSize="25dp"
+                                    app:strokeColor="@color/green"
+                                    app:strokeWidth="2dp" />
+
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profileImg"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/profi">
+
+                        </de.hdodenhof.circleimageview.CircleImageView>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/profileImg">
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/txName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Chikelu Obasea"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tx"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txName"
+                                android:text="@string/has_assigned_you_a_task"
+                                android:textColor="@color/grey_text"
+                                android:textSize="13sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/txDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="2dp"
+                                android:layout_toStartOf="@+id/txAt"
+                                android:text="12, February"
+                                android:textColor="@color/grey_text"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/txAt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="2dp"
+                                android:layout_toStartOf="@+id/txTime"
+                                android:text="at"
+                                android:textColor="@color/grey_text"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/txTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:text="10.00 AM"
+                                android:textColor="@color/grey_text"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

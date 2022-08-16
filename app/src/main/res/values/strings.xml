@@ -80,4 +80,23 @@
     <string name="yearly">Yearly</string>
     <string name="time_is_in_12_hour_clock">Time is in 12 hour clock</string>
     <string name="change">Change</string>
+    <string name="has_assigned_you_a_task">has assigned you a task</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="assigned_task">Assigned Task</string>
+    <string name="you_have_successfully_n_assigned_the_task">You have successfully \n assigned the task</string>
+    <string name="go_to_home">Go to home</string>
+    <string name="add_more_tasks">Add more tasks</string>
+    <string name="already_have_some_n_other_tasks_planned_for_the_n_selected_time">Already have some \n other tasks planned for the \n selected time</string>
+    <string name="would_you_like_to_edit_the_time_you_are_assinging">Would you like to edit the time you are assinging</string>
+    <string name="edit_time">Edit Time</string>
+    <string name="assign_anyways">Assign anyways</string>
+    <string name="edit_personal_info">Edit personal info</string>
+    <string name="save">Save</string>
+    <string name="change_password">Change password</string>
+    <string name="current_password">Current password</string>
+    <string name="all_completed_task">All Completed Task</string>
+    <string name="record_are_available_for">Record are available for</string>
+    <string name="past_30_days">Past 30 days</string>
+    <string name="assigned_by">Assigned by</string>
 </resources>

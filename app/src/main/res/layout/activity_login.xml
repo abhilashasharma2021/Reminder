@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".activity.LoginActivity">
 
     <ScrollView
@@ -21,7 +22,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
-                android:src="@drawable/buddy" />
+                android:src="@drawable/logo" />
 
 
             <com.google.android.material.textview.MaterialTextView
@@ -47,25 +48,40 @@
                 app:cardCornerRadius="15dp"
                 app:cardElevation="5dp">
 
-                <EditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:drawableStart="@drawable/email"
-                    android:drawablePadding="15dp"
-                    android:background="@null"
-                    android:hint="@string/enter_email_eddress"
-                    android:inputType="textEmailAddress"
-                    android:maxLength="60"
-                    android:paddingStart="15dp"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey_text"
-                    android:textSize="14sp" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
+
+                    <ImageView
+                        android:id="@+id/ivMail"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="15dp"
+                        android:padding="8dp"
+                        android:src="@drawable/email" />
+
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toEndOf="@+id/ivMail"
+                        android:background="@null"
+                        android:drawablePadding="15dp"
+                        android:hint="@string/enter_email_eddress"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="60"
+                        android:paddingStart="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey_text"
+                        android:textSize="14sp" />
+                </RelativeLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -83,19 +99,28 @@
                 app:cardElevation="5dp">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/ivPass"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="15dp"
+                        android:padding="8dp"
+                        android:src="@drawable/password" />
 
                     <EditText
                         android:id="@+id/etPass"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginStart="15dp"
                         android:layout_marginEnd="15dp"
                         android:background="@null"
-                        android:drawableStart="@drawable/password"
-                        android:drawablePadding="15dp"
+                        android:layout_toEndOf="@+id/ivPass"
                         android:hint="@string/enter_password"
                         android:inputType="textPassword"
                         android:maxLength="60"
@@ -129,13 +154,13 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txForgot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
                 android:text="@string/forgot_password"
-                android:id="@+id/txForgot"
                 android:textColor="@color/grey_text"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -173,9 +198,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="horizontal"
                 android:weightSum="3">
 
 

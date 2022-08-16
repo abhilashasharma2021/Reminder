@@ -1,6 +1,7 @@
 package com.reminder.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.reminder.R;
+import com.reminder.activity.AssigningTaskActivity;
+import com.reminder.activity.LoginActivity;
+import com.reminder.activity.SignUpActivity;
 import com.reminder.databinding.FragmentHomeBinding;
 
 
@@ -31,6 +35,14 @@ FragmentHomeBinding binding;
                     prog+=10;
                     updateProgreesbar();
                 }
+
+            }
+        });
+
+        binding.add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), AssigningTaskActivity.class));
 
             }
         });

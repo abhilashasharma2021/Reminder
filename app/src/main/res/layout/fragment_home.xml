@@ -222,6 +222,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/add"
                     android:text="@string/click_here_to_add_something"
                     android:textColor="@color/purple_700"
                     android:textSize="13sp"
