@@ -47,6 +47,7 @@
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="5dp">
+
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -62,23 +63,23 @@
                         android:padding="8dp"
                         android:src="@drawable/user" />
 
-                <EditText
-                    android:id="@+id/etName"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                   android:layout_toEndOf="@id/ivName"
-                    android:layout_marginEnd="15dp"
-                    android:background="@null"
-                    android:drawablePadding="15dp"
-                    android:hint="@string/enter_name"
-                    android:inputType="textPersonName"
-                    android:maxLength="60"
-                    android:paddingStart="15dp"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey_text"
-                    android:textSize="14sp" />
+                    <EditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toEndOf="@id/ivName"
+                        android:background="@null"
+                        android:drawablePadding="15dp"
+                        android:hint="@string/enter_name"
+                        android:inputType="textPersonName"
+                        android:maxLength="60"
+                        android:paddingStart="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey_text"
+                        android:textSize="14sp" />
                 </RelativeLayout>
 
             </com.google.android.material.card.MaterialCardView>
@@ -95,6 +96,7 @@
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="5dp">
+
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -110,27 +112,26 @@
                         android:padding="8dp"
                         android:src="@drawable/email" />
 
-                <EditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginEnd="15dp"
-                    android:background="@null"
-                    android:drawablePadding="15dp"
-                    android:hint="@string/enter_email_eddress"
-                    android:inputType="textEmailAddress"
-                    android:maxLength="60"
-                    android:paddingStart="15dp"
-                    android:layout_toEndOf="@+id/ivMail"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/grey_text"
-                    android:textSize="14sp" />
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toEndOf="@+id/ivMail"
+                        android:background="@null"
+                        android:drawablePadding="15dp"
+                        android:hint="@string/enter_email_eddress"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="40"
+                        android:paddingStart="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey_text"
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
-
 
 
             <com.google.android.material.card.MaterialCardView
@@ -173,7 +174,7 @@
                         android:drawablePadding="15dp"
                         android:hint="@string/enter_password"
                         android:inputType="textPassword"
-                        android:maxLength="60"
+                        android:maxLength="25"
                         android:paddingStart="15dp"
                         android:singleLine="true"
                         android:textColor="@color/black"
@@ -198,22 +199,27 @@
                 app:cardCornerRadius="15dp"
                 app:cardElevation="5dp">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="20dp"
-                    android:padding="10dp"
-                    android:src="@drawable/country" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:id="@+id/iVCountry"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:padding="10dp"
+                        android:src="@drawable/country" />
 
-                <Spinner
-                    android:id="@+id/spCountry"
-                    tools:ignore="HardcodedText"
-                    android:paddingStart="45dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.2" />
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        android:id="@+id/spCountry"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:layout_toEndOf="@+id/iVCountry"
+                        tools:ignore="RtlCompat" />
+                </RelativeLayout>
 
 
             </com.google.android.material.card.MaterialCardView>
@@ -251,15 +257,14 @@
 
                     <Spinner
                         android:id="@+id/spGender"
-                        android:spinnerMode="dropdown"
-                        android:popupElevation="10dp"
-                        android:gravity="end"
-                        android:prompt="@string/gender"
-                        tools:ignore="HardcodedText"
-                        android:paddingStart="40dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        />
+                        android:gravity="end"
+                        android:paddingStart="40dp"
+                        android:popupElevation="10dp"
+                        android:prompt="@string/gender"
+                        android:spinnerMode="dropdown"
+                        tools:ignore="HardcodedText" />
 
 
                 </com.google.android.material.card.MaterialCardView>
@@ -278,24 +283,34 @@
                     app:cardCornerRadius="15dp"
                     app:cardElevation="5dp">
 
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="10dp"
-                        android:padding="6dp"
-                        android:src="@drawable/dob" />
+                    <RelativeLayout
+                        android:id="@+id/rlDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/ivDate"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:padding="6dp"
+                            android:src="@drawable/dob" />
 
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/txDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/date_of_birth"
-                        android:textColor="@color/grey_text"
-                        android:textSize="13sp"
-                        android:textStyle="normal" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_toEndOf="@+id/ivDate"
+                            android:text="@string/date_of_birth"
+                            android:textColor="@color/grey_text"
+                            android:textSize="13sp"
+                            android:textStyle="normal" />
+
+                    </RelativeLayout>
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -343,7 +358,6 @@
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="15dp"
                 android:backgroundTint="@color/purple_200"
-                android:contentDescription="Tap to signUo"
                 android:paddingStart="15dp"
                 android:text="@string/sign_up"
                 android:textAllCaps="false"
@@ -359,6 +373,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="15dp"
+                android:id="@+id/txContinue"
                 android:text="@string/or_continue_with"
                 android:textColor="@color/grey_text"
                 android:textSize="14sp"
@@ -454,8 +469,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="15dp"
-                android:text=""
                 android:layout_marginBottom="15dp"
+                android:text=""
                 android:textColor="@color/grey_text"
                 android:textSize="14sp"
                 android:textStyle="bold" />

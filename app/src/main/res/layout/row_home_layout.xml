@@ -98,11 +98,13 @@
                     android:id="@+id/rlView"
                     android:layout_centerVertical="true"
                     android:layout_height="wrap_content">
+
                     <View
                         android:layout_width="5dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/vRed"
                         android:layout_marginStart="15dp"
-                        android:background="@color/red"
-                        android:layout_height="30dp"/>
+                        android:background="@color/red" />
 
                     <View
                         android:layout_width="5dp"
@@ -110,6 +112,7 @@
                         android:layout_centerVertical="true"
                         android:background="@color/yellow"
                         android:visibility="gone"
+                        android:id="@+id/vYellow"
                         android:layout_height="30dp"/>
                     <View
                         android:layout_width="5dp"
@@ -117,6 +120,7 @@
                         android:layout_centerVertical="true"
                         android:background="@color/green"
                         android:visibility="gone"
+                        android:id="@+id/vGreen"
                         android:layout_height="30dp"/>
 
                 </RelativeLayout>
@@ -154,9 +158,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txTittle"
-                        android:text="3.00 pm"
                         android:layout_marginStart="5dp"
                         android:layout_toEndOf="@+id/ivPending"
+                        android:text="3.00 pm"
                         android:textColor="@color/grey_text"
                         android:textSize="12sp" />
 

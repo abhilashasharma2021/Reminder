@@ -5,14 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
+import com.reminder.Database.DatabaseClient;
+import com.reminder.Entity.Task;
 import com.reminder.fragment.FilterFrag;
 import com.reminder.fragment.HomeFragment;
 import com.reminder.fragment.SettingFrag;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -70,4 +75,5 @@ ChipNavigationBar bottomNav ;
     }
 
 
-}
+    }
+

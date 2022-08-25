@@ -174,7 +174,6 @@
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="15dp"
                 android:backgroundTint="@color/purple_200"
-                android:contentDescription="Tap to login"
                 android:paddingStart="15dp"
                 android:text="@string/login"
                 android:textAllCaps="false"
