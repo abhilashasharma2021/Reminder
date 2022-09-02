@@ -110,6 +110,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
                     final SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
                     Date dateObj = null;
                     try {
+
                         dateObj = sdf.parse(getTime );
                     } catch (ParseException e) {
                         e.printStackTrace();
