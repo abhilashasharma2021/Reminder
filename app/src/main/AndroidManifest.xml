@@ -2,13 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.reminder">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
-    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <application
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +21,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Reminder">
+
+        <activity
+            android:name=".AlarmActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.AllCompletedTaskActivity"
             android:exported="false" />
@@ -31,12 +39,13 @@
             android:exported="false" />
         <activity
             android:name=".activity.AddingTaskActivity"
-            android:exported="true" >
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-
-
         <activity
             android:name=".activity.InviteTaskActivity"
             android:exported="false" />
@@ -45,43 +54,50 @@
             android:exported="false" />
         <activity
             android:name=".activity.ForgotPasswordActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".activity.AssigningTaskActivity"
             android:exported="true" />
         <activity
             android:name=".activity.SignUpActivity"
-            android:exported="false" >
-
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".activity.LoginActivity"
-            android:exported="false" >
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".activity.WelcomeActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SplashActivity"
-            android:exported="true"
-            android:screenOrientation="fullSensor">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
 
-        <receiver android:name=".Reminder.MyBroadcastReceiver"
-            android:exported="false">
+        <receiver
+            android:name=".utils.NotificationPublisher"
+            android:enabled="true"
+            android:exported="false"
+            android:label="BootReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.HOME" />
             </intent-filter>
+        </receiver>
+
+
+        <receiver android:name=".activity.MyWidgetProvider"
+            android:exported="true">
+            <intent-filter >
+                <action
+                    android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_xml" />
         </receiver>
 
     </application>

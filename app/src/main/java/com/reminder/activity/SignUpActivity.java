@@ -43,6 +43,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -76,8 +77,10 @@ public class SignUpActivity extends AppCompatActivity {
 
     /*    Calendar c1 = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String strDate = sdf.format(c1.getTime());
+        String strDate = sdf.format(c1.
+        ());
         Log.e("Date","DATE : " + strDate);*/
+
 
         binding.txContinue.setOnClickListener(new View.OnClickListener() {
 
@@ -418,6 +421,8 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
+
+
     private void signUp(String stEmail, String stName, String selectedCountryId, String stDob, String selectedGender) {
 
 
@@ -489,6 +494,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
     }
+
 
 
 }

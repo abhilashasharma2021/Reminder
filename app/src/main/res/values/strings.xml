@@ -99,4 +99,9 @@
     <string name="record_are_available_for">Record are available for</string>
     <string name="past_30_days">Past 30 days</string>
     <string name="assigned_by">Assigned by</string>
+    <attr name="widgetTitle" format="string" />
+    <attr name="widgetContent" format="string" />
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
 </resources>

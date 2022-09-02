@@ -8,7 +8,7 @@ import com.reminder.Dao.TaskDao;
 import com.reminder.Entity.Task;
 
 
-@Database(entities = {Task.class}, version = 1)
+@Database(entities = {Task.class}, version = 2)
 
 public abstract class AppDatabase extends RoomDatabase {
     public abstract TaskDao taskDao();

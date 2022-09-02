@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -11,6 +12,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -22,6 +24,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.reminder.Database.DatabaseClient;
@@ -31,6 +34,7 @@ import com.reminder.R;
 import com.reminder.Reminder.MyBroadcastReceiver;
 import com.reminder.databinding.ActivityAddingTaskBinding;
 import com.reminder.utils.AppConstats;
+import com.reminder.utils.NotificationPublisher;
 import com.reminder.utils.SharedHelper;
 
 import java.text.DateFormat;
@@ -51,35 +55,103 @@ public class AddingTaskActivity extends AppCompatActivity {
     int sp_convention;
     String StrFinalStatus = "", strPriorty = "";
     private HorizontalCalendar horizontalCalendar;
-    CalendarView simpleCalendarView;
-    Integer in_Date, Seconds;
     private String selectedDate = "";
-    int RQS_1=1;
-    private AlarmManager alarmMgr;
-    private PendingIntent alarmIntent;
-
+    String formattedTime;
+    PendingIntent pi;
+    int hours;
+    double minutes, seconds;
+    String sTime="", dateSelect="";
+    final    Calendar calendar = Calendar.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityAddingTaskBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        alarmMgr = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, BroadcastReceiver.class);
-        alarmIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
-        alarmMgr.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-                SystemClock.elapsedRealtime() +
-                        60 * 1000, alarmIntent);
 
+        binding.txChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                TimePickerDialog mTimePicker;
+
+
+                int hour = calendar.get(Calendar.HOUR_OF_DAY);
+                int minute = calendar.get(Calendar.MINUTE);
+
+                mTimePicker = new TimePickerDialog(AddingTaskActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+
+
+
+                        String time = selectedHour + ":" + selectedMinute;
+
+                        SimpleDateFormat fmt = new SimpleDateFormat("HH:mm");
+                        Date date = null;
+                        try {
+                            date = fmt.parse(time );
+                           formattedTime=fmt.format(date);
+                            binding.txTime.setText(formattedTime);
+                        } catch (ParseException e) {
+
+                            e.printStackTrace();
+                        }
+
+                        SimpleDateFormat fmtOut = new SimpleDateFormat("hh:mm aa");
+
+                        sTime=fmtOut.format(date);
+
+                        binding.txTime.setText(sTime);
+                    }
+                }, hour, minute, false);//No 24 hour time
+                mTimePicker.setTitle("Select Time");
+                mTimePicker.show();
+            }
+        });
 
         binding.btSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveTask();
-                //startAlert();
+              // startAlert();
             }
         });
+
+
+        binding.btAssign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String time = "4:34";
+                String[] units = time.split(":"); //will break the string up into an array
+                int hours = Integer.parseInt(units[0]); //first element
+                int minutes = Integer.parseInt(units[1]);
+                int grand_min=hours*60+minutes;
+                int seconds=grand_min*60;
+                Log.e("hghghgh", "seconds: "+seconds);
+
+
+
+                Log.e("sdbsjh", "onClick: "+seconds );
+                Intent intent = new Intent( AddingTaskActivity.this, NotificationPublisher.class);
+                pi = null;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    pi = PendingIntent.getBroadcast(AddingTaskActivity.this, 100, intent,
+                            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+                } else {
+                    pi = PendingIntent.getBroadcast(AddingTaskActivity.this, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                }
+                AlarmManager alarmManager = (AlarmManager) AddingTaskActivity.this.getSystemService(Context.ALARM_SERVICE);
+                alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
+                        + seconds, pi);
+                Toast.makeText(AddingTaskActivity.this, "Alarm set in " + seconds + " seconds", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
 
 
         binding.cbHigh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -180,17 +252,6 @@ public class AddingTaskActivity extends AppCompatActivity {
                 switch (index) {
                     case 0:
                         StrFinalStatus = "0";
-
-                        Calendar calendar = Calendar.getInstance();
-                        calendar.setTimeInMillis(System.currentTimeMillis());
-                        calendar.set(Calendar.HOUR_OF_DAY, 12);
-                        calendar.set(Calendar.MINUTE, 30);
-
-
-                        alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                                AlarmManager.INTERVAL_DAY, alarmIntent);
-
-
                         break;
                     case 1:
                         StrFinalStatus = "1";
@@ -200,22 +261,6 @@ public class AddingTaskActivity extends AppCompatActivity {
                         break;
                     case 3:
                         StrFinalStatus = "3";
-
-                       /* AlarmManager objAlarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                        Calendar objCalendar = Calendar.getInstance();
-                        objCalendar.set(Calendar.YEAR, objCalendar.get(Calendar.YEAR));
-                        objCalendar.set(Calendar.MONTH,  objCalendar.get(Calendar.MONTH));
-                        objCalendar.set(Calendar.DAY_OF_MONTH,  objCalendar.get(Calendar.DAY_OF_MONTH));
-                        objCalendar.set(Calendar.HOUR_OF_DAY, objCalendar.get(Calendar.HOUR_OF_DAY));
-                        objCalendar.set(Calendar.DAY_OF_WEEK, objCalendar.get(Calendar.DAY_OF_WEEK));
-                        objCalendar.set(Calendar.AM_PM, Calendar.AM);
-
-                        Intent alamShowIntent = new Intent(AddingTaskActivity.this, MyBroadcastReceiver.class);
-                        PendingIntent alarmPendingIntent = PendingIntent.getActivity(AddingTaskActivity.this, 0,alamShowIntent,0 );
-
-                        objAlarmManager.set(AlarmManager.RTC_WAKEUP,objCalendar.getTimeInMillis(), alarmPendingIntent);
-
-*/
                         break;
                     case 4:
                         StrFinalStatus = "4";
@@ -229,11 +274,9 @@ public class AddingTaskActivity extends AppCompatActivity {
             }
         });
 
-        Date c = Calendar.getInstance().getTime();
+      /*  Date c = Calendar.getInstance().getTime();
         SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy", Locale.getDefault());
-        selectedDate = df.format(c);
-
-
+        selectedDate = df.format(c);*/
 
         Calendar endDate = Calendar.getInstance();
         endDate.add(Calendar.DAY_OF_WEEK, 5);
@@ -259,12 +302,8 @@ public class AddingTaskActivity extends AppCompatActivity {
                 Log.e("sdvdvdvdv", "CURRENT DATE IS " + date);
 
                 /*CURRENT DATE IS Thu Aug 25 12:41:07 GMT+05:30 2022*/
-
-           SimpleDateFormat format1 = new SimpleDateFormat("dd-mm-yyyy");
-
-                selectedDate = format1.format(date.getTime());
-
-                Log.e("date", "CURRENT DATE IS " + selectedDate);
+                dateSelect = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(date);
+                Log.e("kjcfdskfhk", "onDateSelected: "+dateSelect);
 
             }
 
@@ -280,7 +319,11 @@ public class AddingTaskActivity extends AppCompatActivity {
             binding.etTask.requestFocus();
             return;
         }
-
+        if (sTime.isEmpty()) {
+            binding.txTime.setError("Time required");
+            binding.txTime.requestFocus();
+            return;
+        }
 
         class SaveTask extends AsyncTask<Void, Void, Void> {
 
@@ -289,9 +332,11 @@ public class AddingTaskActivity extends AppCompatActivity {
 
                 //creating a task
                 Task task = new Task();
-                task.setTask(sTask);
-                task.setDate(selectedDate);
+                task.setTask_description(sTask);
+                task.setAdded_date(dateSelect);
+                task.setTime(formattedTime);
                 task.setPriority(strPriorty);
+                task.setRepetition(StrFinalStatus);
 
                 //adding to database
                 DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
@@ -314,19 +359,7 @@ public class AddingTaskActivity extends AppCompatActivity {
         st.execute();
     }
 
-    private Date ConvertToDate(String dateString) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE-MMM-dd");
-        Date convertedDate = new Date();
-        try {
-            convertedDate = dateFormat.parse(dateString);
-        } catch (ParseException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        System.out.println(convertedDate);
-        Log.e("rtyt6uyt", "CURRENT DATE IS " + convertedDate);
-        return convertedDate;
-    }
+
 
 
   /*  private void startAlert() {
@@ -347,19 +380,21 @@ public class AddingTaskActivity extends AppCompatActivity {
 
 /*
 
-        public void startAlert () {
-            EditText text = findViewById(R.id.etTask);
-            int i = Integer.parseInt(text.getText().toString());
-            Intent intent = new Intent(this, MyBroadcastReceiver.class);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                    this.getApplicationContext(), 234324243, intent, 0);
-            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-            alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
-                    + (i * 1000), pendingIntent);
-            Toast.makeText(this, "Alarm set in " + i + " seconds", Toast.LENGTH_LONG).show();
-        }
+
 
 */
 
 
+    public void startAlert () {
+        EditText text = findViewById(R.id.etTask);
+
+        int i = Integer.parseInt(text.getText().toString());
+        Intent intent = new Intent(this, MyBroadcastReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                this.getApplicationContext(), 234324243, intent, 0);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
+                + (i * 1000), pendingIntent);
+        Toast.makeText(this, "Alarm set in " + i + " seconds", Toast.LENGTH_LONG).show();
+    }
 }

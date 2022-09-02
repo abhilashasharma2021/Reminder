@@ -12,19 +12,29 @@ import java.io.Serializable;
 public class Task implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private int task_id;
 
-    @ColumnInfo(name = "task")
-    private String task;
-
-
-    @ColumnInfo(name = "priority")
-    private String priority;
-
-    @ColumnInfo(name = "date")
-    private String date;
+    @ColumnInfo(name = "task_description")
+    private String task_description;
 
 
+
+
+    public int getTask_id() {
+        return task_id;
+    }
+
+    public void setTask_id(int task_id) {
+        this.task_id = task_id;
+    }
+
+    public String getTask_description() {
+        return task_description;
+    }
+
+    public void setTask_description(String task_description) {
+        this.task_description = task_description;
+    }
 
     public String getPriority() {
         return priority;
@@ -34,32 +44,47 @@ public class Task implements Serializable {
         this.priority = priority;
     }
 
-
-    public String getDate() {
-        return date;
+    public String getAdded_date() {
+        return added_date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setAdded_date(String added_date) {
+        this.added_date = added_date;
     }
 
-
-
-    public int getId() {
-        return id;
+    public String getTime() {
+        return time;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public String getTask() {
-        return task;
+    @ColumnInfo(name = "priority")
+    private String priority;
+
+    @ColumnInfo(name = "added_date")
+    private String added_date;
+
+
+    @ColumnInfo(name = "time")
+    private String time;
+
+    public String getRepetition() {
+        return repetition;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+    public void setRepetition(String repetition) {
+        this.repetition = repetition;
     }
+
+    @ColumnInfo(name = "repetition")
+    private String repetition;
+
+
+
+
+
 
 
 }

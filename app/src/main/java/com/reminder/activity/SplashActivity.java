@@ -2,13 +2,23 @@ package com.reminder.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.reminder.R;
+import com.reminder.utils.NotificationPublisher;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -56,4 +66,10 @@ public class SplashActivity extends AppCompatActivity {
             return Character.toUpperCase(first) + s.substring(1);
         }
     }
+
+
+
+
+
+
 }

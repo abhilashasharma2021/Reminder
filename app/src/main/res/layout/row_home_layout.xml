@@ -160,6 +160,17 @@
                         android:layout_below="@+id/txTittle"
                         android:layout_marginStart="5dp"
                         android:layout_toEndOf="@+id/ivPending"
+                        android:text="12-12-2022"
+                        android:textColor="@color/grey_text"
+                        android:textSize="12sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txTittle"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@+id/txDate"
                         android:text="3.00 pm"
                         android:textColor="@color/grey_text"
                         android:textSize="12sp" />
