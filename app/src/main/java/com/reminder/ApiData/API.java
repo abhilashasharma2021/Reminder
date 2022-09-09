@@ -6,5 +6,6 @@ public class API {
     public static final String show_country = "get_country_list";
     public static final String signUp = "signup";
     public static final String login = "login";
+    public static final String forgot = "forgot_password";
 
 }

@@ -121,36 +121,6 @@ public class AddingTaskActivity extends AppCompatActivity {
         });
 
 
-        binding.btAssign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String time = "4:34";
-                String[] units = time.split(":"); //will break the string up into an array
-                int hours = Integer.parseInt(units[0]); //first element
-                int minutes = Integer.parseInt(units[1]);
-                int grand_min=hours*60+minutes;
-                int seconds=grand_min*60;
-                Log.e("hghghgh", "seconds: "+seconds);
-
-
-
-                Log.e("sdbsjh", "onClick: "+seconds );
-                Intent intent = new Intent( AddingTaskActivity.this, NotificationPublisher.class);
-                pi = null;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    pi = PendingIntent.getBroadcast(AddingTaskActivity.this, 100, intent,
-                            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-                } else {
-                    pi = PendingIntent.getBroadcast(AddingTaskActivity.this, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                }
-                AlarmManager alarmManager = (AlarmManager) AddingTaskActivity.this.getSystemService(Context.ALARM_SERVICE);
-                alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
-                        + seconds, pi);
-                Toast.makeText(AddingTaskActivity.this, "Alarm set in " + seconds + " seconds", Toast.LENGTH_LONG).show();
-
-            }
-        });
 
 
 

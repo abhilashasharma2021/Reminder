@@ -174,7 +174,7 @@
                         android:drawablePadding="15dp"
                         android:hint="@string/enter_password"
                         android:inputType="textPassword"
-                        android:maxLength="25"
+                        android:maxLength="30"
                         android:paddingStart="15dp"
                         android:singleLine="true"
                         android:textColor="@color/black"
@@ -217,8 +217,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_gravity="end"
-                        android:layout_toEndOf="@+id/iVCountry"
-                        tools:ignore="RtlCompat" />
+                        android:layout_toEndOf="@+id/iVCountry" />
                 </RelativeLayout>
 
 
@@ -322,6 +321,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:id="@+id/rlTerm"
                 android:layout_marginTop="10dp">
 
                 <com.google.android.material.textview.MaterialTextView

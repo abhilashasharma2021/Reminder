@@ -68,6 +68,10 @@ public class SignUpActivity extends AppCompatActivity {
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.rlTerm.setOnClickListener(v -> {
+            startActivity(new Intent(SignUpActivity.this, TermAndConditionActivity.class));
+        });
+
        /* Calendar calendar = Calendar.getInstance();
         calendar.set(0, 0, 0, hourOfDay, minute, second);
         long timeInMillis = calendar.getTimeInMillis();
@@ -80,6 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
         String strDate = sdf.format(c1.
         ());
         Log.e("Date","DATE : " + strDate);*/
+
 
 
         binding.txContinue.setOnClickListener(new View.OnClickListener() {
@@ -201,7 +206,9 @@ public class SignUpActivity extends AppCompatActivity {
 
                 selectedCountryId = countryId.get(i);
                 Log.e("dsgfdgfdg", selectedCountryId);
-
+                ((TextView) view).setTextColor(
+                        getResources().getColor(R.color.black)
+                );
 
             }
 
@@ -280,8 +287,8 @@ public class SignUpActivity extends AppCompatActivity {
             binding.etPass.setError("Password Must Required");
 
         }
-        else if (stPassword.length()<8) {
-            binding.etPass.setError("The Password must be at least 8 characters in length");
+        else if (stPassword.length()<4) {
+            binding.etPass.setError("The Password must be at least 4 characters in length");
 
         }else if (binding.txDate.getText().toString().isEmpty()) {
             binding.txDate.setError("Dob Must Required");

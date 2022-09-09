@@ -21,6 +21,8 @@ import com.reminder.activity.LoginActivity;
 import com.reminder.activity.SignUpActivity;
 import com.reminder.adapter.HomeAdapter;
 import com.reminder.databinding.FragmentHomeBinding;
+import com.reminder.utils.AppConstats;
+import com.reminder.utils.SharedHelper;
 
 import java.util.List;
 
@@ -30,6 +32,7 @@ public class HomeFragment extends Fragment {
     private int prog = 0;
     View view;
     Context context;
+    String userName="";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,7 +43,11 @@ public class HomeFragment extends Fragment {
         context = getActivity();
         updateProgreesbar();
         binding.rvHome.setLayoutManager(new LinearLayoutManager(getActivity()));
+        userName = SharedHelper.getKey(getActivity(), AppConstats.USER_NAME);
 
+        if (userName!=null){
+          binding.txName.setText(userName);
+        }
         binding.txName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,7 +107,21 @@ public class HomeFragment extends Fragment {
             protected void onPostExecute(List<Task> tasks) {
                 super.onPostExecute(tasks);
                 HomeAdapter adapter = new HomeAdapter(getActivity(),tasks);
-                binding.rvHome.setAdapter(adapter);
+                if(adapter != null ) {
+                    if(adapter.getItemCount() == 0) {
+                        binding.llGraphics.setVisibility(View.VISIBLE);
+                        binding.rvHome.setVisibility(View.GONE);
+                    }
+                    else {
+                        binding.rvHome.setVisibility(View.VISIBLE);
+                        binding.llGraphics.setVisibility(View.GONE);
+                        binding.rvHome.setAdapter(adapter);
+                    }
+                }
+
+
+                //   adapter.notifyDataSetChanged();
+
             }
         }
 

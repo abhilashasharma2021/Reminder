@@ -104,4 +104,6 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
+    <string name="password_must_min_4_and_max_30_char_alphanumeric_combination">*Password Must Min 4 and Max 30 char - Alphanumeric combination</string>
+    <string name="ok">Ok</string>
 </resources>

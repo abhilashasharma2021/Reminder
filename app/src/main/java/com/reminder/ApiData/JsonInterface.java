@@ -1,4 +1,5 @@
 package com.reminder.ApiData;
+import com.reminder.Model.ForgotPasswordModel;
 import com.reminder.Model.LoginModel;
 import com.reminder.Model.ShowCountryModel;
 import com.reminder.Model.SignUpModel;
@@ -24,4 +25,9 @@ public interface JsonInterface {
     @FormUrlEncoded
     @POST(API.login)
     Call<LoginModel> login(@FieldMap Map<String, String> params);
+
+
+    @FormUrlEncoded
+    @POST(API.forgot)
+    Call<ForgotPasswordModel> forgotPassword(@FieldMap Map<String, String> params);
 }

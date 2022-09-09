@@ -21,15 +21,18 @@
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_edit_personal_info.xml" value="0.25" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_forgot_password.xml" value="0.203125" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_invite_task.xml" value="0.25" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_lockscreen_notification.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_main.xml" value="0.1890625" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_reset_password.xml" value="0.203125" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_splash.xml" value="0.203125" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_term_and_condition.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/activity_welcome.xml" value="0.203125" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/app_widget_provider_info.xml" value="0.203125" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/dialog_already_planned_layout.xml" value="0.203125" />
-        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/dialog_reset_password_link_layout.xml" value="0.1890625" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/dialog_home_notification_layout.xml" value="0.22" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/dialog_reset_password_link_layout.xml" value="0.25" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/dialog_sucessfully_assign_layout.xml" value="0.203125" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/easy_track_layout.xml" value="0.2" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/easy_widget_layout.xml" value="0.1890625" />
@@ -37,6 +40,7 @@
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/fragment_setting.xml" value="0.203125" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/new_app_widget.xml" value="0.203125" />
+        <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/notification_layout.xml" value="0.22" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/row_home_layout.xml" value="0.25" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/self_check_layout.xml" value="0.1890625" />
         <entry key="..\:/Users/aamir/Reminder/app/src/main/res/layout/send_reminder_layout.xml" value="0.1890625" />

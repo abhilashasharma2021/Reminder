@@ -95,7 +95,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
 
 
-            scheduleTaskExecutor = Executors.newScheduledThreadPool(5);
+            scheduleTaskExecutor = Executors.newScheduledThreadPool(1);
 
             scheduleTaskExecutor.scheduleAtFixedRate(new Runnable() {
                 @Override
@@ -141,7 +141,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
                         } else {
                             pi = PendingIntent.getBroadcast(mContext, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                         }
+
                         AlarmManager alarmManager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
+
                         alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
                                 + seconds, pi);
                         Toast.makeText(mContext, "Alarm set in " + seconds + " seconds", Toast.LENGTH_LONG).show();
@@ -150,7 +152,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
                     }
 
                 }
-            },0, 5, TimeUnit.SECONDS);
+            },0, 1, TimeUnit.SECONDS);
 
 
 
@@ -192,19 +194,5 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         }
 
     }
-
-    private void update() {
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                adapter.notifyDataSetChanged(); //or notifyItemInserted or notifyItemRemoved as per your need.
-                update(); // recursive call
-
-
-
-            }
-        }, 300);
     }
-}
+

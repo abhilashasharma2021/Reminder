@@ -123,7 +123,7 @@
                         android:background="@null"
                         android:hint="@string/enter_password"
                         android:inputType="textPassword"
-                        android:maxLength="60"
+                        android:maxLength="30"
                         android:paddingStart="15dp"
                         android:singleLine="true"
                         android:textColor="@color/black"
@@ -152,6 +152,16 @@
                 </RelativeLayout>
 
             </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="15dp"
+                android:text="@string/password_must_min_4_and_max_30_char_alphanumeric_combination"
+                android:textColor="@color/grey_text"
+                android:textSize="11dp"
+                android:textStyle="bold" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txForgot"

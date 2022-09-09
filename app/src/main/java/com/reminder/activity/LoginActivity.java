@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.Html;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -55,6 +56,23 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
             }
         });
+
+        binding.ivPassShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.etPass.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+
+            }
+        });
+
+        binding.ivPassGone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.etPass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
+            }
+        });
+
         binding.txForgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,8 +128,8 @@ public class LoginActivity extends AppCompatActivity {
             binding.etPass.setError("Password Must Required");
 
         }
-        else if (stPassword.length()<8) {
-            binding.etPass.setError("The Password must be at least 8 characters in length");
+        else if (stPassword.length()<4) {
+            binding.etPass.setError("The Password must be at least 4 characters in length");
 
         }else {
             boolen = true;
